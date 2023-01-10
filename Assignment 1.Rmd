@@ -1,0 +1,83 @@
+---
+title: "Assignment 1"
+author: "Bakari Moitt"
+date: "2023-01-10"
+output: 
+   Prettydoc: :html_pretty:
+     theme: leonids
+     highlight: github
+---
+
+
+git status 
+gut add -A. 
+git commit -am "note"
+git push
+
+`## this is where I can put anything`
+
+
+# Tuesday Jan 10
+## Git & GitHub
+git is version control: it keeps and restores past versions or files   
+* It was initially for programmers collaborating  
+* Version control is almost like video game  
+   + Different version of quest at checkpoints, you can keep trying different checkpoints  
+   + We also take snapshots of files at different points, like checkpoints  
+   
+Files good for version control  
+1. plain text - .txt  
+2. Rscrpt   
+3. Markdown (.md/.rmd)   
+   + Rmd is text formatting  
+   + Written in markup language  
+4. Html  
+
+Files not good for version control/ GitHub  
+1. Pdf  
+2. Videos/pics  
+3. Word docs  
+
+> Git is version control for our local computer- Thats why we had to download it
+  Gihub is free remote website for public data storage for projects and stuff like that
+
+If this is the GitHub Repo ( the website)…  
+* we can clone/download/make a copy to our local computer  
+* The computer with git on it is talking to the repository and downloading requested file on the local computer  
+   + you can edit and if its your repository you can add the edited version back unto the main branch  
+   
+Repository is for making changes to files  
+* Adding a new file, alter existing files, delete existing files
+* To do this we take a snapshot of files stages over time—- they are called commits  
+   + A commit (noun) is a snapshot of the current file system  
+   + To commit ( verb) is to save and record your changes  
+   
+> Example
+
+#### On ur local computer…  
+* you have files A B C that are committed  
+* A* is now edited so, A* B C… we commit these  
+* A* remains the same, B is deleted, C is same, and add D… we commit these  
+* Now further down the line, if we wanna add back B, we can go grab it from the commit from back when file B existed  
+   ++ To do that we fork it, sometimes the fork doesn’t work so now were stuck, and can instead default to old branch before attempted fork  
+   ++ If its not ur file, you need person to  push up a file … refer back to Monday notes if confused  
+   
+##### What is pushing
+Pushing is transferring changes to document on local computer to GitHub  
+#### What is pulling
+Pulling is a way to bring down github repo to ur computer  
+it could be any local computer  
+
+### What is R project;
+* Divides work into multiple contexts  
+* each project has its own working directory  
+* Is acts as a workspace , has its own history, and sourcing for documents  
+* We are linking r project with git and GitHub  
+* When we create a project on the local computer we cloned the GitHub repository and now have the local files on the computer    
+
+> Talking to git/ GitHub will always be in terminal
+
+> Talking to R will be in console and source panel
+
+* Code fencing is putting whatever words in between these ticks`…`
+
