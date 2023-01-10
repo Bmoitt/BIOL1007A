@@ -62,13 +62,14 @@ Repository is for making changes to files
   - To do that we fork it, sometimes the fork doesn’t work so now were stuck, and can instead default to old branch before attempted fork  
   - If its not ur file, you need person to  push up a file… refer back to Monday notes if confused  
    
-##### What is pushing  
-Pushing is transferring changes to document on local computer to GitHub     
-##### What is pulling  
+##### What is pushing:  
+Pushing is transferring changes to document on local computer to GitHub 
+
+##### What is pulling:  
 Pulling is a way to bring down github repo to ur computer   
 it could be any local computer  
 
-#### What is R project;
+#### What is R project:
 - Divides work into multiple contexts  
 - each project has its own working directory  
 - Is acts as a work space, has its own history, and sourcing for documents  
