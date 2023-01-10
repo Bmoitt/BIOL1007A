@@ -4,8 +4,8 @@ author: "Bakari Moitt"
 date: "2023-01-10"
 output: 
   prettydoc::html_pretty:
-  theme: leonids
-  highlight: github 
+    theme: leonids
+    highlight: github 
 ---
 
 

@@ -9,8 +9,6 @@ output:
 ---
 
 # Assignments
-## Assignment 1
 
-this is just plain text. R is a *little* frustrating to begin with, but can be **fun**.
-
-[Link text](Assignment-1.html)
+[Assignment 1](Assignment-1.html)  
+[Assignment 2](Assignment-2.html)  
