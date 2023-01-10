@@ -2,11 +2,15 @@
 title: "BIO 1007A webpage"
 author: "Bakari Moitt"
 date: "2023-01-10"
-output: html_document
+output: 
+  prettydoc::html_pretty:
+     theme: hpstr
+     highlight: github
 ---
 
-# Header
-## Header 2
-### Heather 3
+# Assignments
+## Assignment 1
 
 this is just plain text. R is a *little* frustrating to begin with, but can be **fun**.
+
+[Link text](Assignment-1.html)
