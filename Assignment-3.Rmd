@@ -1,0 +1,71 @@
+---
+title: "Assignment 3"
+author: "Bakari Moitt"
+date: "2023-01-12"
+output:
+  prettydoc::html_pretty:
+  theme: leonids
+  highlight: github
+---
+
+## Assignment 3
+
+1. Assigning and Evaluating Expression:
+```{r}
+x<-1.1
+a<-2.2
+b<-3.3
+
+z1<-x^a^b
+print (z1)
+
+z2<-(x^a)^b 
+print (z2)
+
+z3<- 3*x^3 + 2*x^2 + 1
+print (z3)
+
+```
+  
+  2. Using rep and seq:
+```{r}
+# question 2
+z4<- c(seq(8:1), rev(1:7))
+print(z4) 
+
+z5<- rep(1:5, 1:5)
+print(z5)
+
+x<- rev(1:5)
+z6<- c(rep(x, 1:5))
+print(z6)
+
+```
+  
+3. Animal Story
+```{r}
+
+queue <- c("sheep", "fox", "owl", "ant")
+print (queue)
+
+#a
+queue <- c("sheep", "fox", "owl", "ant", "serpent")
+print (queue)
+#b
+queue[-c(1)]
+#c
+queue[1] <- "donkey" 
+print (queue)
+#d
+length(queue)=4
+print (queue)
+#e
+queue2 <- append(queue, "aphid", after = 3)
+print(queue2)
+#f
+which(queue2=="aphid")
+```
+
+
+
+

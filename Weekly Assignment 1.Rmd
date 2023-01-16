@@ -1,0 +1,68 @@
+---
+title: "Weekly Assignment 1"
+author: "Bakari Moitt"
+date: "2023-01-15"
+output: 
+  prettydoc::html_pretty:
+    theme: leonids
+    highlight: github 
+---
+
+# How to Set Up a GitHub Webpage in RStudio
+
+###### Step 1: Make a Github account    
+
+  1. Open Github.com on a web browser (I used Google).    
+  2. Click sign up for github and make a login.   
+  
+###### Step 2: Download R & R Studio   
+
+  1. Go to: posit.co/download/rstudio-desktop/   
+  2. Follow steps for install R and RStudio. Ensure that you click "Download RStudio for MAC if you have a MAC" or "Download RStudio for Windows" if you have a Windows    
+  
+###### Step 3: Create a repository in Github  
+
+  1. Open Github and click repositories (you will find Repositories in a bar area below 'edit profile'). There you will find a button that says 'create a new repository'. Click it.   
+  2. Name your repository.   
+  3. Make sure it is set to public.  
+  4. Add a ReadME file (this is where you can give you project a description).   
+  5. Choose a licence. It is best to click MIT licence if you are not familiar with the other ones. This licence is just a basic licence that prevents people from stealing your data and profiting off of it.  
+  6. Click create repository. You should be able to see the repository on the front page.   
+  
+###### Step 4: retrieve access code
+
+  1. Go to settings and click developer settings.    
+  2. Click personal access token.    
+  3. select Tokens Classic ( it will ask you to put in your github account password).  
+  4. Put a note so you know what the token is for
+  5. Adjust expiration date (it can be a good idea to put at least a year).   
+  6. for scopes click 'repo' ( it will automatically click everything else under 'repo'.)
+  7. Press generate token. Then copy down the code it gave to somewhere you cant lose it. I would also email it to yourself to be safe. ( github WILL NOT give you the code again)
+  
+###### Step 5: Install XCode
+
+  1. You may run into some problems installing git through homebrew so installing XCode first may help. XCode is a binary package to help install Git.    
+  2. To figure out which version of Mac you have, you can click the apple icon in the uppermost left corner of your laptop and select 'about this Mac'.   
+  3. If you have the newest version of a mac you can download xcode from the apple store.   
+  4. If you have version 12.5 or higher Mac you can install Xcode from the apple store. If you have a lower version, you can find versions of Xcode fitted for your laptop at 'Xcodereleases.com'.   
+  4. It will request your apple ID and password. Put those in and then install.
+  
+###### Step 6: Use Homebrew to install Git
+
+  1. Go to 'https://formulae.brew.sh/formula/git' and copy the homebrew download link they provide. Next, open terminal on your local computer. You can do so by clicking the search icon in the top right corner of your screen. Then, search Terminal and this should automatically open up the terminal.
+  2. Paste the homebrew download link into the terminal and wait for install.
+  3. Go back to the homebrew git install page and then copy the install command for git. 
+  4. Open Rstudio and click Terminal. Paste the Git install command into terminal. This should install git.   
+  
+###### Step 7: Link repository to Rstudio
+
+  1. On Rstudio Go to the file tab; there you will click 'new project'.   
+  2. Then you will select version control and choose Git.
+  3. It will prompt you to paste a URL. you will paste the repository URL saved from Step 4.7. 
+  4.   Make sure to enter TAB to move the project directory name field. The project should be names index ( all lower caps)
+  5. Select create project.
+
+
+  
+
+
