@@ -43,6 +43,7 @@ output:
 
   1. You may run into some problems installing git through homebrew so installing XCode first may help. XCode is a binary package to help install Git.    
   2. To figure out which version of Mac you have, you can click the apple icon in the uppermost left corner of your laptop and select 'about this Mac'.   
+  This is the icon:  ![](apple icon in corner.png)  
   3. If you have the newest version of a mac you can download xcode from the apple store.   
   4. If you have version 12.5 or higher Mac you can install Xcode from the apple store. If you have a lower version, you can find versions of Xcode fitted for your laptop at 'Xcodereleases.com'.   
   4. It will request your apple ID and password. Put those in and then install.
@@ -53,12 +54,13 @@ output:
   2. Paste the homebrew download link into the terminal and wait for install.
   3. Go back to the homebrew git install page and then copy the install command for git. 
   4. Open Rstudio and click Terminal. Paste the Git install command into terminal. This should install git.   
+A picture of what terminal looks like: ![](terminal.png)
   
 ###### Step 7: Link repository to Rstudio
 
-  1. On Rstudio Go to the file tab; there you will click 'new project'.   
+  1. On Rstudio, there will be an icon in the upper right hand corner; there you will click 'new project'.   
   2. Then you will select version control and choose Git.
-  3. It will prompt you to paste a URL. you will paste the repository URL saved from Step 4.7. 
+  3. It will prompt you to paste a URL. You will paste the repository URL saved from Step 4.7. 
   4.   Make sure to enter TAB to move the project directory name field. The project should be names index ( all lower caps)
   5. Select create project.
 
