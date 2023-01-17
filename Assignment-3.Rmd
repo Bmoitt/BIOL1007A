@@ -50,9 +50,13 @@ print (queue)
 
 #a
 queue <- c("sheep", "fox", "owl", "ant", "serpent")
+#could have done queue[5]<-"serpent"
 print (queue)
+
 #b
 queue[-c(1)]
+#could have done 'queue<-queue<-[-1]'
+
 #c
 queue[1] <- "donkey" 
 print (queue)

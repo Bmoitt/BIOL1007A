@@ -4,17 +4,22 @@ author: "Bakari Moitt"
 date: "2023-01-10"
 output: 
   prettydoc::html_pretty:
-     theme: hpstr
-     highlight: github
+   theme: hpstr
+   highlight: github
+    
 ---
 
-# Assignments
+# Daily Assignments
 
 [Assignment 1](Assignment-1.html) 
 
 [Assignment 2](Assignment-2.html)   
 
 [Assignment 3](Assignment-3.html) 
+
+[Assignment 4](Assignment-4.html)
+
+# Weekly Assignments
 
 [Weekly Assignment 1](Weekly-Assignment-1.html)  
 
