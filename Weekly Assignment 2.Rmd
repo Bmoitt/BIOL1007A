@@ -1,0 +1,11 @@
+---
+title: "Weekly Assignment 2"
+author: "Bakari Moitt"
+date: "2023-01-19"
+output: 
+  prettydoc::html_pretty:
+    theme: leonids
+    highlight: github
+---
+
+

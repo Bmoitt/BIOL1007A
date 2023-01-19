@@ -1,0 +1,37 @@
+---
+title: "Assignment 5"
+author: "Bakari Moitt"
+date: "2023-01-19"
+output: 
+  prettydoc::html_pretty:
+   theme: leonids
+   highlight: github
+---
+
+2. Create a list with the following elements
+```{r}
+num <- 1:100
+mat <- runif(n=16, min=1, max=16)
+my_matrix = matrix( data= mat, nrow=4)
+my_logical= num > 50
+my_letters= sample(letters, 26)
+
+set.seed(123)
+TheList <- list(my_matrix, my_logical, my_letters)
+print(TheList)
+
+```
+2a. new list
+```{r}
+newlist <- list(my_m2= my_matrix[2,2], my_lo2= my_logical[2], my_le2= my_letters[2])
+newlist
+```
+3. An empty data frame
+```{r}
+my_unifs <- runif(26, min=0, max=10)
+my_letters <- sample(LETTERS, 26) 
+
+
+```
+
+

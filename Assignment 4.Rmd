@@ -15,28 +15,26 @@ n_dims <- round(runif(1, min=3, max=10))
 n_dims
 
 #consecutive integers
-n_dims2 <- seq(6, from=1, to=n_dims^2)
+n_dims2 <- seq(from=1, to=n_dims^2)  
 n_dims2
 #reshuffle
-sample(n_dims2)
 #sqre matrix
-m <- matrix(data = n_dims2, nrow=2)
+m <- matrix(data = sample(n_dims2), nrow=n_dims)
 print(m)
 #transpose
 m2<- t(m)
 print(m2)
-#
+# It has changed by havign the rows become the columns when transposed
 #sum & mean of m
 sum(m[1,])
-sum(m[2,])
+sum(m[n_dims,])
 mean(m[1,])
-mean(m[2,])
+mean(m[n_dims,])
 #sum and mean of m2
 sum(m2[1,])
-sum(m2[3,])
+sum(m2[n_dims,])
 mean(m2[1,])
-mean(m2[3,])
-
+mean(m2[n_dims,])
 
 ```
 

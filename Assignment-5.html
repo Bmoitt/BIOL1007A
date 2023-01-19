@@ -12,9 +12,9 @@
 
 <meta name="author" content="Bakari Moitt" />
 
-<meta name="date" content="2023-01-17" />
+<meta name="date" content="2023-01-19" />
 
-<title>Assignment 4</title>
+<title>Assignment 5</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -152,9 +152,9 @@ code span.ot { color: #007020; }
 <div class="col s12 m3">
 <div class="table cover">
 <div class="cover-card table-cell table-middle">
-<span class="author_name">Assignment 4</span>
+<span class="author_name">Assignment 5</span>
 <span class="author_bio mbm">Bakari Moitt</span>
-<span class="author_bio mbm">2023-01-17</span>
+<span class="author_bio mbm">2023-01-19</span>
 </div>
 </div>
 </div>
@@ -165,69 +165,55 @@ code span.ot { color: #007020; }
 
 <div id="post">
 <article class="post-content">
-<div id="working-with-matrices-lists-and-data-frames" class="section level1">
-<h1>Working with matrices, lists, and data frames</h1>
-<ol style="list-style-type: decimal">
-<li>Assign to the variable n_dims a single random integer between 3 and
-10</li>
+<ol start="2" style="list-style-type: decimal">
+<li>Create a list with the following elements</li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>n_dims <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">1</span>, <span class="at">min=</span><span class="dv">3</span>, <span class="at">max=</span><span class="dv">10</span>))</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>n_dims</span></code></pre></div>
-<pre><code>## [1] 9</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#consecutive integers</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>n_dims2 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from=</span><span class="dv">1</span>, <span class="at">to=</span>n_dims<span class="sc">^</span><span class="dv">2</span>)  </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>n_dims2</span></code></pre></div>
-<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
-## [26] 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50
-## [51] 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75
-## [76] 76 77 78 79 80 81</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#reshuffle</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#sqre matrix</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="fu">sample</span>(n_dims2), <span class="at">nrow=</span>n_dims)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(m)</span></code></pre></div>
-<pre><code>##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
-##  [1,]   29   45   44   55   59   37   63   23   38
-##  [2,]   10   31   77   76    4   78   22   11   49
-##  [3,]   64   43    6   56    3   32   66   50   33
-##  [4,]   54   41    7   81   36    9   21   51   26
-##  [5,]    8   12   68   17   39   79   74   75   20
-##  [6,]   61   42   69   40   65   71   62   28   58
-##  [7,]   53   73   67   24   15    2   60   30   25
-##  [8,]   72   13   27   18   70    5   46   14   19
-##  [9,]   80   16   52   47   35   34    1   57   48</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#transpose</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>m2<span class="ot">&lt;-</span> <span class="fu">t</span>(m)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(m2)</span></code></pre></div>
-<pre><code>##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
-##  [1,]   29   10   64   54    8   61   53   72   80
-##  [2,]   45   31   43   41   12   42   73   13   16
-##  [3,]   44   77    6    7   68   69   67   27   52
-##  [4,]   55   76   56   81   17   40   24   18   47
-##  [5,]   59    4    3   36   39   65   15   70   35
-##  [6,]   37   78   32    9   79   71    2    5   34
-##  [7,]   63   22   66   21   74   62   60   46    1
-##  [8,]   23   11   50   51   75   28   30   14   57
-##  [9,]   38   49   33   26   20   58   25   19   48</code></pre>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># It has changed by havign the rows become the columns when transposed</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#sum &amp; mean of m</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(m[<span class="dv">1</span>,])</span></code></pre></div>
-<pre><code>## [1] 393</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(m[n_dims,])</span></code></pre></div>
-<pre><code>## [1] 370</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(m[<span class="dv">1</span>,])</span></code></pre></div>
-<pre><code>## [1] 43.66667</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(m[n_dims,])</span></code></pre></div>
-<pre><code>## [1] 41.11111</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#sum and mean of m2</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(m2[<span class="dv">1</span>,])</span></code></pre></div>
-<pre><code>## [1] 431</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(m2[n_dims,])</span></code></pre></div>
-<pre><code>## [1] 316</code></pre>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(m2[<span class="dv">1</span>,])</span></code></pre></div>
-<pre><code>## [1] 47.88889</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(m2[n_dims,])</span></code></pre></div>
-<pre><code>## [1] 35.11111</code></pre>
-</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>num <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n=</span><span class="dv">16</span>, <span class="at">min=</span><span class="dv">1</span>, <span class="at">max=</span><span class="dv">16</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>my_matrix <span class="ot">=</span> <span class="fu">matrix</span>( <span class="at">data=</span> mat, <span class="at">nrow=</span><span class="dv">4</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>my_logical<span class="ot">=</span> num <span class="sc">&gt;</span> <span class="dv">50</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>my_letters<span class="ot">=</span> <span class="fu">sample</span>(letters, <span class="dv">26</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>TheList <span class="ot">&lt;-</span> <span class="fu">list</span>(my_matrix, my_logical, my_letters)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(TheList)</span></code></pre></div>
+<pre><code>## [[1]]
+##           [,1]      [,2]      [,3]      [,4]
+## [1,] 15.358112 10.729368 14.363631 12.823678
+## [2,]  6.199104  1.806075  2.751876  8.160769
+## [3,] 14.950049  1.312293  7.571989  4.499732
+## [4,]  1.359909  3.748335  6.340062  6.350839
+## 
+## [[2]]
+##   [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [13] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [25] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [37] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [49] FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [61]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [73]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [85]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [97]  TRUE  TRUE  TRUE  TRUE
+## 
+## [[3]]
+##  [1] &quot;v&quot; &quot;j&quot; &quot;g&quot; &quot;u&quot; &quot;d&quot; &quot;w&quot; &quot;m&quot; &quot;y&quot; &quot;t&quot; &quot;c&quot; &quot;l&quot; &quot;k&quot; &quot;s&quot; &quot;f&quot; &quot;r&quot; &quot;h&quot; &quot;p&quot; &quot;a&quot; &quot;o&quot;
+## [20] &quot;z&quot; &quot;x&quot; &quot;b&quot; &quot;n&quot; &quot;q&quot; &quot;i&quot; &quot;e&quot;</code></pre>
+<p>2a. new list</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>newlist <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">my_m2=</span> my_matrix[<span class="dv">2</span>,<span class="dv">2</span>], <span class="at">my_lo2=</span> my_logical[<span class="dv">2</span>], <span class="at">my_le2=</span> my_letters[<span class="dv">2</span>])</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>newlist</span></code></pre></div>
+<pre><code>## $my_m2
+## [1] 1.806075
+## 
+## $my_lo2
+## [1] FALSE
+## 
+## $my_le2
+## [1] &quot;j&quot;</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>An empty data frame</li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>my_unifs <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">26</span>, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">10</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>my_letters <span class="ot">&lt;-</span> <span class="fu">sample</span>(LETTERS, <span class="dv">26</span>) </span></code></pre></div>
 </article>
 </div>
 </div>
