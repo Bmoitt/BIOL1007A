@@ -8,9 +8,13 @@ output:
    highlight: github
     
 ---
+# <span style="color: bisque;">Welcome </span>  
+<span style="color: green;"> Hey y'all. Thanks for stopping by my page for a little minute. This is my first ever webpage made for my 23' J-term course: Reproducible in R. We're learning how to maneuver the statistical program R/Rstudio. This page serves as a culmination of my work throughout the pseudo-semester. Enjoy:) </span>
 
-# Daily Assignments
+#### <span style="color: coral;">Laugh a little</span>
+![Hehehe](Tyler.gif)
 
+## <span style="color: blueviolet;">Daily Assignments</span>
 [Assignment 1](Assignment-1.html) 
 
 [Assignment 2](Assignment-2.html)   
@@ -21,7 +25,7 @@ output:
 
 [Assignment 5](Assignment-5.html)
 
-# Weekly Assignments
+## <span style="color: blueviolet;">Weekly Assignments</span>
 
 [Weekly Assignment 1](Weekly-Assignment-1.html) 
 
