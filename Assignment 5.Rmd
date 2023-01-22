@@ -30,8 +30,37 @@ newlist
 ```{r}
 my_unifs <- runif(26, min=0, max=10)
 my_letters <- sample(LETTERS, 26) 
+#Data frame
+dFrame <- data.frame(my_unifs, my_letters)
+View(dFrame)
 
+# 4 empty row
+dFrame$my_unifs[sample(nrow(dFrame),4)]<-NA
+View(dFrame)
 
+#which rows have NA
+which(is.na(dFrame))
+
+#rearrange for alphabetical order
+my_letters <- LETTERS[1:26]
+dFrame <- data.frame(my_unifs, my_letters)
+View(dFrame)
+
+#mean of variable 1
+mean(dFrame$my_unifs)
+
+#rename
+colnames(dFrame) <- c("my_unifs", "my_LETTERS")
+print(dFrame)
 ```
+
+
+
+
+
+
+
+
+
 
 

@@ -179,10 +179,10 @@ code span.ot { color: #007020; }
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(TheList)</span></code></pre></div>
 <pre><code>## [[1]]
 ##           [,1]      [,2]      [,3]      [,4]
-## [1,] 15.358112 10.729368 14.363631 12.823678
-## [2,]  6.199104  1.806075  2.751876  8.160769
-## [3,] 14.950049  1.312293  7.571989  4.499732
-## [4,]  1.359909  3.748335  6.340062  6.350839
+## [1,]  7.526159  5.843788  9.975863  5.350687
+## [2,] 15.859524 12.074657  8.349042  5.710267
+## [3,]  8.369457 10.132982 15.006384  2.092640
+## [4,]  5.214576 11.610319  8.729392 15.137672
 ## 
 ## [[2]]
 ##   [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
@@ -196,24 +196,73 @@ code span.ot { color: #007020; }
 ##  [97]  TRUE  TRUE  TRUE  TRUE
 ## 
 ## [[3]]
-##  [1] &quot;v&quot; &quot;j&quot; &quot;g&quot; &quot;u&quot; &quot;d&quot; &quot;w&quot; &quot;m&quot; &quot;y&quot; &quot;t&quot; &quot;c&quot; &quot;l&quot; &quot;k&quot; &quot;s&quot; &quot;f&quot; &quot;r&quot; &quot;h&quot; &quot;p&quot; &quot;a&quot; &quot;o&quot;
-## [20] &quot;z&quot; &quot;x&quot; &quot;b&quot; &quot;n&quot; &quot;q&quot; &quot;i&quot; &quot;e&quot;</code></pre>
+##  [1] &quot;m&quot; &quot;x&quot; &quot;f&quot; &quot;s&quot; &quot;a&quot; &quot;l&quot; &quot;z&quot; &quot;v&quot; &quot;i&quot; &quot;r&quot; &quot;u&quot; &quot;e&quot; &quot;n&quot; &quot;d&quot; &quot;b&quot; &quot;c&quot; &quot;k&quot; &quot;j&quot; &quot;w&quot;
+## [20] &quot;q&quot; &quot;o&quot; &quot;g&quot; &quot;h&quot; &quot;y&quot; &quot;p&quot; &quot;t&quot;</code></pre>
 <p>2a. new list</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>newlist <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">my_m2=</span> my_matrix[<span class="dv">2</span>,<span class="dv">2</span>], <span class="at">my_lo2=</span> my_logical[<span class="dv">2</span>], <span class="at">my_le2=</span> my_letters[<span class="dv">2</span>])</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>newlist</span></code></pre></div>
 <pre><code>## $my_m2
-## [1] 1.806075
+## [1] 12.07466
 ## 
 ## $my_lo2
 ## [1] FALSE
 ## 
 ## $my_le2
-## [1] &quot;j&quot;</code></pre>
+## [1] &quot;x&quot;</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>An empty data frame</li>
 </ol>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>my_unifs <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">26</span>, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">10</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>my_letters <span class="ot">&lt;-</span> <span class="fu">sample</span>(LETTERS, <span class="dv">26</span>) </span></code></pre></div>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>my_letters <span class="ot">&lt;-</span> <span class="fu">sample</span>(LETTERS, <span class="dv">26</span>) </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Data frame</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>dFrame <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(my_unifs, my_letters)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(dFrame)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 4 empty row</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>dFrame<span class="sc">$</span>my_unifs[<span class="fu">sample</span>(<span class="fu">nrow</span>(dFrame),<span class="dv">4</span>)]<span class="ot">&lt;-</span><span class="cn">NA</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(dFrame)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">#which rows have NA</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(<span class="fu">is.na</span>(dFrame))</span></code></pre></div>
+<pre><code>## [1]  5  8 12 13</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#rearrange for alphabetical order</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>my_letters <span class="ot">&lt;-</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">26</span>]</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>dFrame <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(my_unifs, my_letters)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(dFrame)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">#mean of variable 1</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(dFrame<span class="sc">$</span>my_unifs)</span></code></pre></div>
+<pre><code>## [1] 5.999047</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#rename</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(dFrame) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;my_unifs&quot;</span>, <span class="st">&quot;my_LETTERS&quot;</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(dFrame)</span></code></pre></div>
+<pre><code>##     my_unifs my_LETTERS
+## 1  2.8757752          A
+## 2  7.8830514          B
+## 3  4.0897692          C
+## 4  8.8301740          D
+## 5  9.4046728          E
+## 6  0.4555650          F
+## 7  5.2810549          G
+## 8  8.9241904          H
+## 9  5.5143501          I
+## 10 4.5661474          J
+## 11 9.5683335          K
+## 12 4.5333416          L
+## 13 6.7757064          M
+## 14 5.7263340          N
+## 15 1.0292468          O
+## 16 8.9982497          P
+## 17 2.4608773          Q
+## 18 0.4205953          R
+## 19 3.2792072          S
+## 20 9.5450365          T
+## 21 8.8953932          U
+## 22 6.9280341          V
+## 23 6.4050681          W
+## 24 9.9426978          X
+## 25 6.5570580          Y
+## 26 7.0853047          Z</code></pre>
 </article>
 </div>
 </div>
