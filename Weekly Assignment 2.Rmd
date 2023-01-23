@@ -7,5 +7,37 @@ output:
     theme: leonids
     highlight: github
 ---
+1. Create a Function
+```{r}
+#Type
+Type <- rep(c("Control", "Treatment"), each=25) 
 
+#value
+glue <- function(n, mean, sd) {   
+as.vector(mean + sd * scale(rnorm(n)))
+}
+set.seed(124)
+Value <- c(glue(25, 10, 1.5), glue(25, 25, 2))
+```
+
+2. First 6 Rows
+```{r}
+#the frame
+dFrame <- data.frame(Type, Value)
+head(dFrame)
+```
+
+3. statistical analysis of variance
+```{r}
+#ANoVA
+oneway <- aov(Value ~ Type, data= dFrame)
+summary(oneway)
+
+```
+
+4. Returns P-value
+```{r}
+#Returns only p-value
+summary(oneway)[[1]][1,5]
+```
 
