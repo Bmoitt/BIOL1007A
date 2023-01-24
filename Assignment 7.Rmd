@@ -1,0 +1,8 @@
+---
+title: "Assignment 7"
+author: "Bakari Moitt"
+date: "2023-01-24"
+output:prettydoc::html_pretty:
+   theme: leonids
+   highlight: github
+---

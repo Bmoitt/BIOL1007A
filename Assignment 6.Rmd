@@ -2,9 +2,10 @@
 title: "Assignment 6"
 author: "Bakari Moitt"
 date: "2023-01-24"
-output::html_pretty:
-  theme: leonids
-  highlight: github
+output:
+  prettydoc::html_pretty:
+   theme: leonids
+   highlight: github
 ---
 1. Iris Data set
 ```{r}
@@ -46,15 +47,22 @@ print(irisTab)
 
 7. Create another iris
 ```{r}
-virginica<- filter(iris4, Species != "versicolor")
-versicolor<- filter(iris4, Species != "virginica")
 
-iris5<- c(summarise(virginica, vi.SLength = mean(Sepal.Length), vi.SWidth = mean(Sepal.Width), viSS = n()) , summarise(versicolor, ve.SLength = mean(Sepal.Length), ve.SWidth = mean(Sepal.Width), veSS = n()))
-print(iris5)
+
+irisGroup <- group_by(iris4, Species)
+iris5 <- summarise(irisGroup, meanS.Length = mean(Sepal.Length), meanS.Width = mean(Sepal.Width), SS = n())
+iris5
 ```
 
 8. Create final iris
 ```{r}
-#irisFinal<-  filter(iris, Species != "setosa" & Sepal.Length > 6 & Sepal.Width > 2.5) %>% -(Petal.Width:Petal.Length) 
+FinalIris <- iris %>%
+  filter(Species != "setosa" & Sepal.Length > 6 & Sepal.Width > 2.5) %>%
+  select( -(Petal.Width:Petal.Length)) %>%
+  arrange(by=desc(Sepal.Length)) %>%
+  mutate(Sepal.Area = (Sepal.Length*Sepal.Width)) %>%
+  group_by(Species) %>%
+  summarise(meanS.Length = mean(Sepal.Length), meanS.Width = mean(Sepal.Width), SS = n())
+print(FinalIris)
 ```
 
