@@ -25,6 +25,8 @@ output:
 
 [Assignment 5](Assignment-5.html)
 
+[Assignment 6](Assignment-6.html)
+
 ## <span style="color: blueviolet;">Weekly Assignments</span>
 
 [Weekly Assignment 1](Weekly-Assignment-1.html) 
