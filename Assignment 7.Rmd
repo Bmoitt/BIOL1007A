@@ -6,3 +6,49 @@ output:prettydoc::html_pretty:
    theme: leonids
    highlight: github
 ---
+1. Use starwars dataset
+```{r}
+library(tidyverse)
+data("starwars")
+
+SWSpecies <- starwars %>%
+  group_by(species) %>%
+  summarize(TotalN=n()) %>%
+  filter(TotalN >1) %>%
+  select(species)
+
+starwars1 <-starwars %>%
+  filter(species %in% SWSpecies$species)
+glimpse(starwars1)
+```
+
+2. Clean Data Set
+```{r}
+starwars2 <- starwars1 %>% drop_na(height)
+```
+
+3. Create a box plot
+```{r}
+p1<- ggplot(data=starwars2, mapping=aes(x=species, y=height, fill=species)) + 
+  geom_boxplot() + 
+  xlab("Species") +
+  ylab("Height(cm)")
+p1 + theme_minimal() + annotate("text", x=NA, y=240, label = "p=1.2E-0.5", colour = "red", size = 2.5)
+```
+
+4. Create additional plot
+```{r}
+p2<- ggplot(data=starwars2, mapping=aes(x=gender, fill=gender)) + 
+  geom_bar ()+
+  xlab("Gender") +
+  ylab("Total")
+p2 + theme_classic()
+```
+
+5. create multi-panel figure
+```{r}
+library(patchwork)
+p1/p2 + plot_layout(widths=c(70,20))
+```
+
+
