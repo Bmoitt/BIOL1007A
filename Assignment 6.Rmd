@@ -1,0 +1,60 @@
+---
+title: "Assignment 6"
+author: "Bakari Moitt"
+date: "2023-01-24"
+output::html_pretty:
+  theme: leonids
+  highlight: github
+---
+1. Iris Data set
+```{r}
+library(tidyverse)
+data(iris)
+str(iris)
+```
+  - There are 150 observations of 5 variables
+  
+2. Create a new data frame
+```{r}
+iris1<- filter(iris, Species != "setosa" & Sepal.Length > 6 & Sepal.Width > 2.5)
+```
+  - There are 56 observations of 5 variables
+  
+3. Create another iris
+```{r}
+iris2<- select(iris1, -(Petal.Width:Petal.Length)) 
+```
+  - There are 56 observations of 3 variables.
+  
+4. Create another iris
+```{r}
+iris3<- arrange(iris2, by=desc(Sepal.Length))
+head(iris3)
+```
+
+5. Create another iris
+```{r}
+iris4<- mutate(iris3, Sepal.Area = (Sepal.Length*Sepal.Width))
+```
+  - There are 56 observations of 4 variables
+  
+6. Create a Summary
+```{r}
+irisTab<- summarise(iris4, meanS.Length = mean(Sepal.Length), meanS.Width = mean(Sepal.Width), SS = n())
+print(irisTab)
+```
+
+7. Create another iris
+```{r}
+virginica<- filter(iris4, Species != "versicolor")
+versicolor<- filter(iris4, Species != "virginica")
+
+iris5<- c(summarise(virginica, vi.SLength = mean(Sepal.Length), vi.SWidth = mean(Sepal.Width), viSS = n()) , summarise(versicolor, ve.SLength = mean(Sepal.Length), ve.SWidth = mean(Sepal.Width), veSS = n()))
+print(iris5)
+```
+
+8. Create final iris
+```{r}
+#irisFinal<-  filter(iris, Species != "setosa" & Sepal.Length > 6 & Sepal.Width > 2.5) %>% -(Petal.Width:Petal.Length) 
+```
+
