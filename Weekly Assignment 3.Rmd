@@ -23,8 +23,7 @@ Otter$species <- factor(Otter$species, labels=c("ASC", "SCO"))
 hope<- ggplot(data=Otter,
               aes(x=species, y=latency, fill= puzzle.type)) + geom_boxplot(outlier.color= "black", outlier.shape=16, outlier.size=2, notch=FALSE) +
   ylab("Latenency to First Interactions(s)")
-hope + theme_classic(base_size=14, base_family="Times") + guides(fill=guide_legend(title="puzzle type")) +
-                                                                   scale_fill_grey()
+hope + theme_classic(base_size=16, base_family="Times") + guides(fill=guide_legend(title="puzzle type")) + scale_fill_grey(start=0.4)
     
   
 
