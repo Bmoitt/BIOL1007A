@@ -1,0 +1,19 @@
+---
+title: "Weekly Assignment 3"
+author: "Bakari Moitt"
+date: "2023-01-30"
+output: html_document
+---
+
+I am recreating a graph from a data set looking at the asymmetric of terrestrial high-latitude plant warming patterns are much more intense and asymmetric now than in the past.   
+![](Weekly assignment aim pic.png)
+
+
+```{r}
+
+TP1<- read.table(file="ww_data1.csv", header = TRUE, sep = ",")
+head(TP1)
+TP2<- read.table(file="ww_data2.csv", header = TRUE, sep = ",")
+head(TP2)
+```
+

@@ -29,12 +29,14 @@ output:
 
 [Assignment 7](Assignment-7.html)
 
+[Assignment 8](Assignment-8.html)
+
 ## <span style="color: blueviolet;">Weekly Assignments</span>
 
 [Weekly Assignment 1](Weekly-Assignment-1.html) 
 
 [Weekly Assignment 2](Weekly-Assignment-2.html)
 
-
+[Weekly Assignment 3](Weekly-Assignment-3.html)
 
 
