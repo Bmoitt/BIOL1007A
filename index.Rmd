@@ -31,6 +31,10 @@ output:
 
 [Assignment 8](Assignment-8.html)
 
+[Assignment 9](Assignment-9.html)
+
+[Final Project](Final-Project.html)
+
 ## <span style="color: blueviolet;">Weekly Assignments</span>
 
 [Weekly Assignment 1](Weekly-Assignment-1.html) 
@@ -38,5 +42,7 @@ output:
 [Weekly Assignment 2](Weekly-Assignment-2.html)
 
 [Weekly Assignment 3](Weekly-Assignment-3.html)
+
+[Weekly Assignment 4](Weekly-Assignment-4.html)
 
 

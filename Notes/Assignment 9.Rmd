@@ -1,0 +1,71 @@
+---
+title: "Assignment 9"
+author: "Bakari Moitt"
+date: "2023-01-30"
+output: html_document
+---
+
+1: Loop and If function
+```{r}
+x <- c(1,5,0,4,0,16,6,0,8,7,0,12)
+counter <- 0
+for(i in 1:length(x)){
+  if(x[i] == 0){
+    counter <- counter + 1}
+  }
+
+print(counter)
+```
+
+
+2:Output of Matrix
+```{r}
+set.seed (123)
+mat <- matrix(round(runif(15),digits=2),nrow=(3))
+for (i in 1:nrow(mat)) {
+  for(j in 1:ncol(mat)) {
+    mat[i,j] <- i * j
+  }
+}
+print(mat) 
+
+
+```
+
+3: Use for loop
+```{r}
+#make dframe
+set.seed(124)
+glue <- function(n=25, mean1=10, sd1=1.5, n2=25,mean2=45,sd2=2) {
+  type <- rep(c("Control", "Treatment"), each = n) 
+  value <- c(rnorm(n, mean = mean1, sd = sd1), rnorm(n2, mean=mean2, sd=sd2))
+  dframe <- data.frame(type, value)
+  return(dframe)
+  }
+data <-glue()
+
+P <- function(dframe=NULL) { 
+  oneway <-aov(value ~ type, data = dframe)
+  testSummary<- summary(oneway)
+  p_value <- testSummary[[1]][["Pr(>F)"]][1] 
+  return(p_value)
+}
+P(dframe=data)
+P
+
+## create empty data frame
+x <- 1:100
+goal<- data.frame(Number=NA, P_rep=NA)
+## for loop
+for (i in 1:100) {
+  goal[i,] <- i== P(dframe=data)
+for (j in 1:100) {
+  goal[,j] <- j== P(frame=data)
+}
+}
+return(goal)
+
+
+
+```
+

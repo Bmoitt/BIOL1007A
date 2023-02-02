@@ -1,0 +1,41 @@
+---
+title: "Weekly Assignment 4"
+author: "Bakari Moitt"
+date: "2023-01-31"
+output: html_document
+---
+Simulate a brand new data frame (the type of data is up to you) and conduct a statistical analysis in R using 2 variables. Create a basic ggplot that goes with the analysis.
+
+```{r}
+#load libraries
+library(ggplot2)
+library(dplyr)
+library(wesanderson)
+```
+
+```{r}
+#simulate
+glimpse(chickwts)
+buckbuck<- chickwts
+
+```
+
+```{r}
+#conduct statistical analysis
+anova <-aov(weight ~ feed, data= buckbuck)
+sum<- summary(anova)
+
+```
+
+
+```{r}
+
+#create ggplot
+cols<-wesanderson::wes_palette("BottleRocket1", 6)
+whoop<- ggplot(buckbuck,aes(x=feed, y=weight, fill=feed)) + geom_boxplot() + 
+  scale_fill_manual(values=cols)
+
+print(whoop) 
+```
+
+

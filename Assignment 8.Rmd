@@ -103,7 +103,7 @@ dryadData$treatment <- factor(dryadData$treatment,
 
 p<- ggplot(data=dryadData, # this says that you would like a plot or graph to be made
        aes(x=interaction(wetland, treatment), # the x values will be the wetland and treatment columns
-           y=count.total.adults, fill=factor(year))) + geom_bar(position="dodge", stat="identity", color="black") + # the y values will be the total adult count. geom_bar is requesting a bar graph where the position is dodge which means _____ and the stats are _______ while the color for the bars are black
+           y=count.total.adults, fill=factor(year))) + geom_bar(position="dodge", stat="identity", color="black") + # the y values will be the total adult count. geom_bar is requesting a bar graph where the position is dodge which is telling the bard to avoid overlapping with one another and the stats set to identity tell ggplot to leave the data as is while the color for the bars are black
   ylab("Number of breeding adults") + # the x-axis is named Number of breeding adults
   xlab("") + # the y-axis is unnamed
   scale_y_continuous(breaks = c(0,100,200,300,400,500)) + #this gives the breakdown for the scale of the y-axis where there is a continuous scale of numbers beginning with 0 ending with 500 and then more in between as read above
@@ -111,7 +111,7 @@ p<- ggplot(data=dryadData, # this says that you would like a plot or graph to be
   facet_wrap(~species, nrow=2, strip.position="right") + # this separates the bar plot into two separate graphs based on the 2 species in the species column of dryadData. The strip position puts them on the rights side and nrow=2 represent the number of rows in the species columns (like the options)
  theme_few() + scale_fill_grey() + #this establishes a grey scale for the graphs
 theme(panel.background = element_rect(fill = 'gray94', color = 'black'), #this fills the background fo the panel with shade gray94 and the outline becomes black
-legend.position="top",  legend.title= element_blank(), axis.title.y = element_text(size=12, face="bold", colour = "black"), strip.text.y = element_text(size = 10, face="bold", colour = "black")) + #makes the legend go to the top with legend.position. for the strip text, the siz was adjusted to be 10, the font size was made to be bold, and the print color was made to b black
+legend.position="top",  legend.title= element_blank(), axis.title.y = element_text(size=12, face="bold", colour = "black"), strip.text.y = element_text(size = 10, face="bold", colour = "black")) + #makes the legend go to the top with legend.position. for the strip text, the size was adjusted to be 10, the font size was made to be bold, and the print color was made to b black
   guides(fill=guide_legend(nrow=1,byrow=TRUE))  #the legend is adjusted to be in line with the graph rather than away from it
 
 p
