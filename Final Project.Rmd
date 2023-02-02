@@ -8,7 +8,7 @@ output:
     highlight: github
 ---
 Intro:   
-Hi and welcome to my final project presentation. Below I will build graphs to replicate that of a scientific report published by Christine Nicol of Royal Veterinary College and Claire Weeks of University of Bristol. Their report is about the widespread issue of injurious pecking among laying hens. They are looking at the ability of hens in captivity to care for their beaks accordingly when generations have not been doing so and in the case that they can, what tools would need to be present in the pen.
+Hi and welcome to my final project presentation. Below I will build graphs to replicate that of a scientific report published by Erica Crespi of Washington State University. The report is about the widespread issue of highly effective but detrimental pesticides among quails. They are looking at ways to protect the Galapagos finches from invasive parasites. 
 
 Initially, my plan was to make a personal website detailing the movies that I had watched during j-term and ranking them accordingly, but that proved to be quite difficult. Since I could only start on the final project post our class on Tuesday I was not able to get any troubleshooting help, so I decided making graphs was the next best thing. 
 
