@@ -33,7 +33,7 @@ output:
 
 [Assignment 9](Assignment-9.html)
 
-[Final Project](Final-Project.html)
+[Final Assignment](Final-Assignment.html)
 
 ## <span style="color: blueviolet;">Weekly Assignments</span>
 

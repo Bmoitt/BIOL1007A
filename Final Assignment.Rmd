@@ -1,0 +1,101 @@
+---
+title: "Final Assignment"
+author: "Bakari Moitt"
+date: "2023-02-06"
+output:
+  prettydoc::html_pretty:
+  theme: architect
+  highlight: github
+---
+Intro:   
+Hi and welcome to my final project presentation. Below I will build graphs to replicate that of a scientific report published by Erica Crespi of Washington State University. The report is about the widespread issue of highly effective but detrimental pesticides among quails. They are looking at ways to protect the Galapagos finches from invasive parasites. 
+
+Initially, my plan was to make a personal website detailing the movies that I had watched during j-term and ranking them accordingly, but that proved to be quite difficult. Since I could only start on the final project post our class on Tuesday I was not able to get any troubleshooting help, so I decided making graphs was the next best thing. I will replicate Figure 4 of the data. 
+
+Step 1: obtain the data  
+  1. Download the data set from datadryad.org. I used this website for the beak data: https://datadryad.org/stash/dataset/doi:10.5061%2Fdryad.2bvq83bs3     
+  2. Click the link provided that will guide you to orchid.org to find the report figures.
+  - insert pic
+  3. Under works you will find title that relates to pecking and beaks. Click the DOI code.
+  - insert pic
+  4. Now that you have open access to the article, you can scroll a bit down and clock browse figure. This will show you all the figures within the article so you know what to copy. Take screenshots of the pictures so you can refer back to them as you work on the graph replication.
+  
+Step 2: Upload your data:
+  1. 
+
+```{r}
+library(ggplot2)
+library(ggthemes)
+library(tidyr)
+
+Quail1<- read.table(file="final project/Trans-ovo quail 15.csv", header = TRUE, sep = ",")
+head(Quail1)
+
+Quail2<- read.table(file="final project/Trans-ovo qual 5.csv", header = TRUE, sep = ",")
+head(Quail2)
+
+```
+
+Step 3: Figure 4
+Here is a picture of my intended replication:
+![Figure 4](final project/figure 4.png)
+
+```{r}
+### Making graph 1
+
+#information for standard error bars
+se<- sd(Quail2$Heart.Rate)/29 
+sed<- c(rep(se,29))
+m<- mean(Quail2$Heart.Rate)
+mean<- c(rep(m,29)
+        )
+se1 <- Quail2$Heart.Rate- sd(Quail2$Heart.Rate)
+se2 <- Quail2$Heart.Rate + sd(Quail2$Heart.Rate)
+G<- cbind(Quail2, se1, se2)
+
+#graphing
+G1<- ggplot(data=G,
+              aes(x= Treatment, y=Heart.Rate, fill= Treatment)) + geom_bar(position="dodge", stat="identity", width=0.5, show.legend=FALSE) +
+  ylab("Heart Rates(bpm)") +
+  xlab("") +
+  labs( tag="(A) 5d")
+#establishing themes and presentation changes
+G1F<- G1 +  theme_classic() + scale_fill_grey(start=.1, end=.1) + geom_errorbar(aes(ymin=se1, ymax=se2), width=0.2) + theme(axis.text.y = element_text(face="bold"), axis.text.x = element_text(face="bold"))
+G1F
+
+```
+
+```{r}
+### Making graph 2
+ G2<- ggplot(data=Quail1,
+              aes(x= Heart.Mass..g., y=Heart.rates, color=Permethrin, shape= Nest)) + geom_point(size=3.0)
+
+G2F<- G2+ theme_classic() + theme(legend.position = c(0.1, 0.8), legend.title=element_blank()) + scale_shape_manual(values= c(16, 18)) + scale_y_continuous(name="Heart Rate(bpm)", limits=c(0, 350), breaks = c(50, 100, 150, 200, 250, 300, 350)) + xlab("Heart Mass(g)") + theme(panel.background=element_rect(colour="black", size=1)) + scale_color_manual(values=c(Control="darkgrey", Permethrin="black")) + labs( tag="(B) 15d")
+G2F
+```
+
+Step 4: Panel
+```{r}
+library(patchwork)
+( G1F + plot_spacer() ) /(G2F + plot_spacer()) + plot_spacer() +
+plot_layout(heights = c(10,10,0.5))
+  
+```
+
+Step 5: Plausible troubleshooting:
+  1. There were multiple issues that I came across while making the graphs, mainly, I could not properly get the error bars on the first graph.   
+   - I tried to make functions that created error bar data, but the error bars were the wrong size.   
+   - I tried to addi in new columns with data for error bars, but it did made the graph red.   
+   - eventually, I did each bit of data separately then made columns and that was the most accurate that I have been.  
+   
+  2. For graph 2, I could not get the colors of the dots to change.  
+    - I tried scale_fill_grey, but the color would only be black.  
+    I tried scale_color_grey, but the color would remain the same.   
+    Finally, I tried scale_color_manual and wrote the exact colors for each sections and it worked.   
+  3. For creating the panel, I had an issue with modifications not transferring over.
+    - I fiddled with it for a while until I decided to make the modifications be considered a separate graph ( i.e G1F and G2F) 
+  4. For creating the panel, the graph was being stretched.
+    - I tried to adjust height and width using plot_layout ( heights, weights) but that did not work.
+    - I ended up adding in plot spaces to squish the data's width. The legend was still messing up, so i assume they stretched the panel in a different program
+  5. An issue with bolding.
+    - I attempted to bold the words for each graph but they were not as bold as I needed it to be, so I assume they typed over the sides in a different program.
