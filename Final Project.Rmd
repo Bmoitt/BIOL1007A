@@ -76,13 +76,13 @@ graph1<- ggplot(data=Quail1,
   ylab("Body mass(g)") +
   xlab("")+
   labs( tag= "(A)")
-  stat_summary(fun.data = mean_se, 
-               geom="errorbar",
-               width = 0.2)
+  #stat_summary(fun.data = mean_se, 
+               #geom="errorbar",
+               #width = 0.2)
 graph1 + theme_classic() + scale_fill_grey( start = .1, end = .3, breaks = c("0.2 g cotton", "0.8 g cotton")) + guides(fill=guide_legend(title=""),) +
   theme(axis.text = element_text(face="bold"), panel.background = element_rect(fill = 'gray94', color = 'black'),
   legend.position="left") 
-
+summarize
 ```
 
 ```{r}

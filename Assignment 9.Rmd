@@ -1,0 +1,66 @@
+---
+title: "Assignment 9"
+author: "Bakari Moitt"
+date: "2023-02-05"
+output: html_document
+---
+#1:Using for loop and if statement
+```{r}
+set.seed(124)
+vector <- c(round(runif(10), digits=1), rep(0,3))
+vector
+counter <- 0
+fun<- function(vec=NULL){
+  for(i in 1:length(vec)) {
+    if(vec[i] == 0){
+      counter <- counter + 1}
+    }
+  return(counter)
+}
+fun(vec=vector)
+```
+#2: A function with input
+```{r}
+fun2 <- function(nRow, nCol) {
+  matty <- matrix(nrow=nRow, ncol= nCol)
+  for (i in 1:nRow) {
+    for (j in 1: nCol) {
+      matty[i,j] <- i*j
+    }
+  }
+  return(matty)
+}
+fun2(3,3)
+```
+
+#3 Use for loop for week 2
+```{r}
+#make function
+fun3 <- function(m1=10,sd1=1.5,m2=45, sd2=2, n=25){
+  Type <- c(rep("Control", 25), rep("Treatment", 25))
+  Value <- c(rnorm(n=25, mean=m1, sd=sd1), rnorm(n=n, mean=m2, sd=sd2))
+  DataF<-data.frame(Type,Value)
+  return(DataF)
+}
+fun3()
+
+
+#grab p-value
+pval<- function(df=fun3()){
+  Anova <- aov(Value~Type, data = df)
+  pv <- summary(Anova)[[1]][["Pr(>F)"]][1]
+  return(pv)
+}
+pval()
+
+#loop
+loop<- data.frame(num_rep=NA, p_val=NA)
+for(i in 1:100){
+  loop[i,1] <- i
+  df<- fun3()
+  PV <- pval(df)
+  loop[i,2]<-PV
+}
+print(loop)
+```
+
